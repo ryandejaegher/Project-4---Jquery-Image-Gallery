@@ -1,0 +1,49 @@
+body {
+	background: white;
+}
+
+ul {
+	list-style: none;
+	display: block;
+	padding: 0;
+	max-width: 980px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+ul li img {
+	display: block;
+}
+
+/*img {
+	min-width: 40%;
+}*/
+
+ul li {
+	display: inline-block;
+	padding: 0px 60px 0px 60px;
+}
+
+.search-nav {
+text-align: center;
+background-color: white;
+padding: 30px 0;
+}
+
+#search {
+	font-size: 16px;
+}
+
+input {
+	width: 436px;
+	padding: 10px 10px;
+	border-radius: 10px;
+	border: 2px solid lightgrey;
+	outline: none;
+}
+
+.list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
