@@ -1,5 +1,5 @@
 (function() {                             // Lives in an IIFE
-  var $imgs = $('.list img');          // Get the images
+  var $imgs = $('li img');          // Get the images
   var $search = $('#search');      // Get the input element
   var cache = [];                         // Create an array called cache
 
