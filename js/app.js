@@ -1,47 +1,19 @@
-//Problem: User when clicks image goes to dead end
-//solution: Create an overlay with the large image - Lightbox
+//// Image Search ////
 
+var $imgSearch = $('input');
 
-var $overlay = $('<div id="overlay"></div>');
-var $image = $("<img>");
-var $caption = $("<p></p>");
+//// Updates results after each keypress
+$imgSearch.keyup(function(){
+  var input = $(this).val()/*.toLowerCase()*/;
 
-	//2.1 An image to overlay
-$overlay.append($image);
+//// Get images, Search images title attribute ////
+ 	$('#imageGallery img').each(function(){
+    var titleText = $(this).attr('title').toLowerCase();
 
-	//2.2 A caption
-
-$overlay.append($caption);
-
-//2. Add overlay
-$("body").append($overlay);
-
-
-
-
-//1. Capture the click event on a link to an image
-$("#imageGallery a").click(function(event){
-	event.preventDefault();
-	var imageLocation = $(this).attr("href");
-	//Update overlay with image linked in the link	
-	$image.attr("src", imageLocation);
-
-
-	//2. Show an overlay
-	$overlay.show();
-	//4. Get childs alt attribute and set caption
-
-	var captionText = $(this).children("img").attr("alt");
-	$caption.text(captionText);
+    if(titleText.search(input) > -1){
+      $(this).parent().parent().slideDown(200);
+    } else {
+      $(this).parent().parent().slideUp(200);
+    }
+  });
 });
-
-	//2.3 When overlay is clicked, hide overlay
-$overlay.click(function(){
-	$overlay.hide();
-});
-
-//3. Scroll through overlay by clicking left/right
-	//3.1 Have arrows outside of overlay
-
-
-
