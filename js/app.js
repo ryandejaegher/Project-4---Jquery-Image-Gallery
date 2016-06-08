@@ -2,11 +2,9 @@
 
 var $imgSearch = $('input');
 
-//// Updates results after each keypress
 $imgSearch.keyup(function(){
-  var input = $(this).val()/*.toLowerCase()*/;
+  var input = $(this).val().toLowerCase();
 
-//// Get images, Search images title attribute ////
  	$('#imageGallery img').each(function(){
     var titleText = $(this).attr('title').toLowerCase();
 
